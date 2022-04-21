@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:tanzak_clone/chart_screen/first/chart_screen_first.dart';
-import 'package:tanzak_clone/chart_screen/second/chart_screen_second.dart';
+
+import '../chart_screen/first/chart_screen_first.dart';
+import '../chart_screen/second/chart_screen_second.dart';
 
 class ChartScreen extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class ChartScreen extends StatefulWidget {
 }
 
 class _ChartScreenState extends State<ChartScreen> {
-  final screens = [ChartScreenFirst(), ChartScreenSecond()];
+  final screens = [const ChartScreenFirst(), const ChartScreenSecond()];
 
   @override
   Widget build(BuildContext context) {

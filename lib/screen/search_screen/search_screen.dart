@@ -1,0 +1,65 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:tanzak_clone/fake_data.dart';
+
+class SearchScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Search'),
+        centerTitle: true,
+        elevation: 0,
+        bottom: PreferredSize(
+          child: Container(
+              color: Colors.white,
+              height: 50.0,
+              width: double.infinity,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 2),
+                child: TextField(
+                  decoration: InputDecoration(
+                      filled: true,
+                      isDense: true,
+                      fillColor: Colors.white60,
+                      prefixIcon: Icon(Icons.search, color: Colors.black),
+                      suffixIcon: Icon(
+                        Icons.cancel,
+                        color: Colors.black,
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(40))),
+                      hintStyle: TextStyle(color: Colors.black38),
+                      hintText: "Search"),
+                ),
+              )),
+          preferredSize: const Size.fromHeight(50.0),
+        ),
+      ),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(8),
+        itemCount: fakeItemSearch.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Column(children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(fakeItemSearch[index].name),
+                  Row(
+                    children: [
+                      Text(fakeItemSearch[index].numberOfPages.toString()),
+                      const Icon(Icons.arrow_right),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const Divider(),
+          ]);
+        },
+      ),
+    );
+  }
+}

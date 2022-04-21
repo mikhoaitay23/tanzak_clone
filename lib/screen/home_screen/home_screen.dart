@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:tanzak_clone/screen/detail/detail_screen.dart';
 
-import '../fake_data.dart';
+import '../../fake_data.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -49,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Hello World',
+                'Option 1',
                 style: TextStyle(fontWeight: FontWeight.bold),
               )),
         ),
@@ -64,20 +65,25 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 12,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    color: Colors.grey,
-                    width: 160,
-                    height: 200,
-                  ),
-                  Text(
-                    fakeItemHome[index].name,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(fakeItemHome[index].description)
-                ],
+              return InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, DetailScreen.routeName);
+                },
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      color: Colors.grey,
+                      width: 160,
+                      height: 200,
+                    ),
+                    Text(
+                      fakeItemHome[index].name,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text(fakeItemHome[index].description)
+                  ],
+                ),
               );
             },
           ),
@@ -87,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Hello World',
+                'Option 2',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             )),

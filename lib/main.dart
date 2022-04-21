@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tanzak_clone/chart_screen/chart_screen.dart';
-import 'package:tanzak_clone/home_screen/home_screen.dart';
-import 'package:tanzak_clone/search_screen/search_screen.dart';
-import 'package:tanzak_clone/settings_screen/settings_screen.dart';
+import 'package:tanzak_clone/screen/detail/detail_screen.dart';
+import 'package:tanzak_clone/screen/home_screen/home_screen.dart';
+import 'package:tanzak_clone/screen/search_screen/search_screen.dart';
+import 'package:tanzak_clone/screen/settings_screen/settings_screen.dart';
+import 'package:tanzak_clone/screen/chart_screen/chart_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+    '/DetailScreen': (context) => DetailScreen(),
+    },
       theme: ThemeData(
           primarySwatch: Colors.blue,
           tabBarTheme: const TabBarTheme(
