@@ -3,5 +3,5 @@ class ItemSearch {
   final String name;
   final int numberOfPages;
 
-  const ItemSearch({required this.id, required this.name, required this.numberOfPages});
+  const ItemSearch({this.id, this.name, this.numberOfPages});
 }

@@ -4,7 +4,7 @@ import 'package:tanzak_clone/fake_data.dart';
 import 'package:tanzak_clone/widget/item_chart.dart';
 
 class ChartScreenFirst extends StatelessWidget {
-  const ChartScreenFirst({Key? key}) : super(key: key);
+  const ChartScreenFirst({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

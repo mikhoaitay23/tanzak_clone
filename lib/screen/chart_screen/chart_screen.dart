@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:tanzak_clone/utils/strings.dart';
 
+import '../../widget/ktext.dart';
 import '../chart_screen/first/chart_screen_first.dart';
 import '../chart_screen/second/chart_screen_second.dart';
 
@@ -20,14 +21,14 @@ class _ChartScreenState extends State<ChartScreen> {
         appBar: AppBar(
           bottom: const TabBar(tabs: [
             Tab(
-              text: 'First',
+              text: Strings.first,
             ),
             Tab(
-              text: 'Second',
+              text: Strings.second,
             )
           ]),
-          title: const Text(
-            'Chart',
+          title: KText(
+            text: Strings.chart, color: Colors.white,
           ),
           centerTitle: true,
         ),

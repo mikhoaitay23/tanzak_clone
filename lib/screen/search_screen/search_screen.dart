@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanzak_clone/fake_data.dart';
+import 'package:tanzak_clone/utils/strings.dart';
+
+import '../../widget/ktext.dart';
 
 class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search'),
+        title: KText(
+          text: Strings.search,
+          color: Colors.white,
+        ),
         centerTitle: true,
         elevation: 0,
         bottom: PreferredSize(
@@ -30,7 +36,7 @@ class SearchScreen extends StatelessWidget {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(40))),
                       hintStyle: TextStyle(color: Colors.black38),
-                      hintText: "Search"),
+                      hintText: Strings.search),
                 ),
               )),
           preferredSize: const Size.fromHeight(50.0),
@@ -46,10 +52,16 @@ class SearchScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(fakeItemSearch[index].name),
+                  KText(
+                    text: fakeItemSearch[index].name,
+                    color: Colors.black,
+                  ),
                   Row(
                     children: [
-                      Text(fakeItemSearch[index].numberOfPages.toString()),
+                      KText(
+                        text: fakeItemSearch[index].numberOfPages.toString(),
+                        color: Colors.black,
+                      ),
                       const Icon(Icons.arrow_right),
                     ],
                   ),

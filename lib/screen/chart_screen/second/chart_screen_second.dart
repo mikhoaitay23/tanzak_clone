@@ -4,7 +4,7 @@ import '../../../fake_data.dart';
 import '../../../widget/item_chart.dart';
 
 class ChartScreenSecond extends StatelessWidget {
-  const ChartScreenSecond({Key? key}) : super(key: key);
+  const ChartScreenSecond({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
