@@ -20,9 +20,9 @@ class KText extends StatelessWidget {
     return Text(
       '$text',
       style: TextStyle(
-        fontSize: fontSize != null ? fontSize : 14,
-        fontWeight: fontWeight != null ? fontWeight : FontWeight.normal,
-        color: color != null ? color : Colors.black54,
+        fontSize: fontSize ?? 14,
+        fontWeight: fontWeight ?? FontWeight.normal,
+        color: color ?? Colors.black54,
       ),
       maxLines: maxLines,
       overflow: TextOverflow.ellipsis,

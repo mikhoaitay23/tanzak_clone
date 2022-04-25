@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanzak_clone/fake_data.dart';
 import 'package:tanzak_clone/utils/strings.dart';
@@ -27,14 +26,16 @@ class SearchScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       filled: true,
                       isDense: true,
-                      fillColor: Colors.white60,
+                      fillColor: Colors.grey,
                       prefixIcon: Icon(Icons.search, color: Colors.black),
                       suffixIcon: Icon(
                         Icons.cancel,
                         color: Colors.black,
                       ),
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(40))),
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.all(Radius.circular(40)),
+                      ),
                       hintStyle: TextStyle(color: Colors.black38),
                       hintText: Strings.search),
                 ),

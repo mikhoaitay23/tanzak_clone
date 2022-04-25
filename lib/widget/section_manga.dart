@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../fake_data.dart';
@@ -19,7 +18,7 @@ class SectionManga extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: KText(
-                text: 'Option 1',
+                text: 'Title',
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tanzak_clone/screen/detail/detail_screen.dart';
 import 'package:tanzak_clone/screen/home_screen/home_screen.dart';
 import 'package:tanzak_clone/screen/search_screen/search_screen.dart';
@@ -14,12 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-    '/DetailScreen': (context) => DetailScreen(),
-    },
+        '/DetailScreen': (context) => const DetailScreen(),
+      },
       theme: ThemeData(
           primarySwatch: Colors.blue,
           tabBarTheme: const TabBarTheme(
