@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanzak_clone/model/item_home.dart';
 
-import '../fake_data.dart';
 import 'ktext.dart';
 
 class ItemEpisode extends StatelessWidget {
@@ -12,12 +11,12 @@ class ItemEpisode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: InkWell(
+            onTap: () {},
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -45,9 +44,9 @@ class ItemEpisode extends StatelessWidget {
               ],
             ),
           ),
-          const Divider()
-        ],
-      ),
+        ),
+        const Divider()
+      ],
     );
   }
 }

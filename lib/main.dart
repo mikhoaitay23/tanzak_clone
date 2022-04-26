@@ -66,6 +66,8 @@ class _HomePageState extends State<HomePage> {
         currentIndex: currentPosition,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         onTap: (index) => setState(() => currentPosition = index),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

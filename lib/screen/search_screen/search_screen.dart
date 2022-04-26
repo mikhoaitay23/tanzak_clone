@@ -20,23 +20,24 @@ class SearchScreen extends StatelessWidget {
               color: Colors.white,
               height: 50.0,
               width: double.infinity,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 2),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 2),
                 child: TextField(
                   decoration: InputDecoration(
                       filled: true,
                       isDense: true,
-                      fillColor: Colors.grey,
-                      prefixIcon: Icon(Icons.search, color: Colors.black),
-                      suffixIcon: Icon(
+                      fillColor: Colors.grey[300],
+                      prefixIcon: const Icon(Icons.search, color: Colors.black),
+                      suffixIcon: const Icon(
                         Icons.cancel,
                         color: Colors.black,
                       ),
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.all(Radius.circular(40)),
                       ),
-                      hintStyle: TextStyle(color: Colors.black38),
+                      hintStyle: const TextStyle(color: Colors.black38),
                       hintText: Strings.search),
                 ),
               )),
@@ -44,33 +45,38 @@ class SearchScreen extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.all(8),
         itemCount: fakeItemSearch.length,
         itemBuilder: (BuildContext context, int index) {
-          return Column(children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  KText(
-                    text: fakeItemSearch[index].name,
-                    color: Colors.black,
-                  ),
-                  Row(
+          return Column(
+            children: [
+              InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       KText(
-                        text: fakeItemSearch[index].numberOfPages.toString(),
+                        text: fakeItemSearch[index].name,
                         color: Colors.black,
                       ),
-                      const Icon(Icons.arrow_right),
+                      Row(
+                        children: [
+                          KText(
+                            text:
+                                fakeItemSearch[index].numberOfPages.toString(),
+                            color: Colors.black,
+                          ),
+                          const Icon(Icons.arrow_right),
+                        ],
+                      ),
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
-            const Divider(),
-          ]);
+              const Divider(),
+            ],
+          );
         },
       ),
     );

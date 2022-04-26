@@ -33,7 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
               child: CarouselSlider.builder(
                 itemCount: urlImages.length,
                 options: CarouselOptions(
-                    height: 250,
                     autoPlay: true,
                     viewportFraction: 1,
                     onPageChanged: (index, reason) =>
@@ -52,9 +51,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget buildImage(String urlImage, int index) => Container(
-        color: Colors.grey,
-        child: Image.network(urlImage, fit: BoxFit.cover),
-      );
+      color: Colors.grey,
+      child: ClipRRect(
+        child: Stack(children: <Widget>[
+          InkResponse(
+              child: Image.network(urlImage, fit: BoxFit.cover, width: 1000.0),
+              onTap: () {})
+        ]),
+      ));
 
   Widget buildIndicator() => AnimatedSmoothIndicator(
         activeIndex: activeIndex,
