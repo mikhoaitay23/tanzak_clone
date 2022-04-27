@@ -48,22 +48,22 @@ class DetailScreen extends StatelessWidget {
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: ExactAssetImage('assets/images/img_haha.jpg'),
-                          fit: BoxFit.fill,
+                          fit: BoxFit.fitWidth,
                         ),
                       ),
                       child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 0.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.0)),
+                              color: Colors.white.withOpacity(0.5)),
                         ),
                       ),
                     )),
                     const Positioned(
-                        left: 48,
-                        top: 48,
-                        right: 48,
-                        bottom: 48,
+                        left: 16,
+                        top: 16,
+                        right: 16,
+                        bottom: 16,
                         child: SizedBox(
                           child: Image(
                             image:
