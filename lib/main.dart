@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       },
       theme: ThemeData(
           primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
           tabBarTheme: const TabBarTheme(
             labelColor: Colors.white,
             indicator: UnderlineTabIndicator(

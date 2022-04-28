@@ -9,16 +9,19 @@ class ChartScreenFirst extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        padding: const EdgeInsets.all(12),
-        itemCount: fakeItemHome.length,
-        itemBuilder: (BuildContext ctx, index) {
-          return ItemChart(itemHome: fakeItemHome[index]);
-          },
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 300,
-            childAspectRatio: 2 / 3,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10),
+      padding: const EdgeInsets.all(12),
+      itemCount: fakeItemHome.length,
+      itemBuilder: (BuildContext ctx, index) {
+        return InkWell(
+          onTap: () {},
+          child: ItemChart(itemHome: fakeItemHome[index]),
+        );
+      },
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 300,
+          childAspectRatio: 2 / 3,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10),
     );
   }
 }

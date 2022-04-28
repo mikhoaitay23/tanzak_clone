@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../../fake_data.dart';
 import '../../../widget/item_chart.dart';
@@ -12,7 +12,10 @@ class ChartScreenSecond extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       itemCount: fakeItemHome.length,
       itemBuilder: (BuildContext ctx, index) {
-        return ItemChart(itemHome: fakeItemHome[index]);
+        return InkWell(
+          onTap: () {},
+          child: ItemChart(itemHome: fakeItemHome[index]),
+        );
       },
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300,

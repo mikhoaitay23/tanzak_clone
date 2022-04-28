@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import '../fake_data.dart';
@@ -5,7 +6,6 @@ import '../screen/detail/detail_screen.dart';
 import 'ktext.dart';
 
 class SectionManga extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,14 +25,15 @@ class SectionManga extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 250,
+        Container(
+          height: 258,
+          margin: const EdgeInsets.symmetric(horizontal: 8),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.only(top: 8),
             itemCount: fakeItemHome.length,
             separatorBuilder: (BuildContext context, int index) =>
-            const SizedBox(
+                const SizedBox(
               width: 12,
             ),
             itemBuilder: (BuildContext context, int index) {
@@ -47,11 +48,21 @@ class SectionManga extends StatelessWidget {
                       color: Colors.grey,
                       width: 160,
                       height: 200,
+                      child: Image.network(
+                        fakeItemHome[index].urlImage,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 4,
                     ),
                     KText(
                       text: fakeItemHome[index].name,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
+                    ),
+                    const SizedBox(
+                      height: 4,
                     ),
                     KText(
                       text: fakeItemHome[index].description,
@@ -66,5 +77,4 @@ class SectionManga extends StatelessWidget {
       ],
     );
   }
-
 }

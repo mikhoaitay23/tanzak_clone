@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tanzak_clone/model/item_home.dart';
 
+import '../data/model/item_home.dart';
 import 'ktext.dart';
 
 class ItemEpisode extends StatelessWidget {
@@ -26,6 +26,7 @@ class ItemEpisode extends StatelessWidget {
                       color: Colors.grey,
                       width: 100,
                       height: 60,
+                      child: Image.network(itemHome.urlImage, fit: BoxFit.cover,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8),

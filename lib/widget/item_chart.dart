@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tanzak_clone/model/item_home.dart';
 
+import '../data/model/item_home.dart';
 import 'ktext.dart';
 
 class ItemChart extends StatelessWidget {
@@ -18,12 +17,19 @@ class ItemChart extends StatelessWidget {
           child: Container(
             color: Colors.grey,
             height: 200,
+            child: Image.network(itemHome.urlImage, fit: BoxFit.cover,),
           ),
+        ),
+        const SizedBox(
+          height: 4,
         ),
         KText(
           text: itemHome.name,
           fontWeight: FontWeight.bold,
           color: Colors.black,
+        ),
+        const SizedBox(
+          height: 4,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
