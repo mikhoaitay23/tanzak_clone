@@ -60,6 +60,7 @@ class SettingsState extends State<SettingsScreen> {
                 height: 8,
               ),
               _title('Title 2'),
+              const SizedBox(height: 8,),
               ItemSettings(title: 'Sub title 1', haveArrow: true),
               ItemSettings(title: 'Sub title 2', haveArrow: true),
               ItemSettings(title: 'Sub title 3', haveArrow: true),

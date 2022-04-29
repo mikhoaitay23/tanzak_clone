@@ -5,6 +5,7 @@ import 'package:tanzak_clone/screen/home_screen/home_screen.dart';
 import 'package:tanzak_clone/screen/search_screen/search_screen.dart';
 import 'package:tanzak_clone/screen/settings_screen/settings_screen.dart';
 import 'package:tanzak_clone/screen/chart_screen/chart_screen.dart';
+import 'package:tanzak_clone/utils/strings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,10 +72,10 @@ class _HomePageState extends State<HomePage> {
         showUnselectedLabels: true,
         onTap: (index) => setState(() => currentPosition = index),
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Chart'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting')
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: Strings.home),
+          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: Strings.chart),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: Strings.search),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: Strings.settings)
         ],
       ),
     );

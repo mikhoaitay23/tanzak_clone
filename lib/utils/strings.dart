@@ -6,4 +6,5 @@ class Strings {
   static const String description = 'Description';
   static const String home = 'Home';
   static const String search = 'Search';
+  static const String settings = 'Settings';
 }
