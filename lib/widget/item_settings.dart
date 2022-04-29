@@ -12,21 +12,24 @@ class ItemSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              KText(
-                text: title,
-                color: Colors.black,
-              ),
-              Visibility(
-                child: const Icon(Icons.arrow_forward_ios),
-                visible: haveArrow,
-              ),
-            ],
+        InkWell(
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                KText(
+                  text: title,
+                  color: Colors.black,
+                ),
+                Visibility(
+                  child: const Icon(Icons.arrow_forward_ios),
+                  visible: haveArrow,
+                ),
+              ],
+            ),
           ),
+          onTap: () {},
         ),
         const Divider(),
       ],

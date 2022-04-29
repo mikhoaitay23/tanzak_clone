@@ -5,7 +5,7 @@ import 'package:tanzak_clone/utils/strings.dart';
 import 'package:tanzak_clone/widget/section_episode.dart';
 import 'package:tanzak_clone/widget/section_manga.dart';
 import 'package:expand_widget/expand_widget.dart';
-
+import 'package:share_plus/share_plus.dart';
 import '../../widget/ktext.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -28,7 +28,9 @@ class DetailScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                _onShare(context);
+              },
               icon: const Icon(Icons.share),
               tooltip: 'Share',
             )
@@ -183,5 +185,12 @@ class DetailScreen extends StatelessWidget {
             ),
           ),
         ));
+  }
+
+  void _onShare(BuildContext context) async {
+    final box = context.findRenderObject() as RenderBox;
+    await Share.share('Check out my app',
+        subject: 'tanzak',
+        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
   }
 }
