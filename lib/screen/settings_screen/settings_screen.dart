@@ -19,6 +19,7 @@ class SettingsState extends State<SettingsScreen> {
           title: KText(
             text: 'Settings',
             color: Colors.white,
+            fontSize: 18,
           ),
           centerTitle: true,
         ),

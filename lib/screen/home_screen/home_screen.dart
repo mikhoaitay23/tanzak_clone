@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: KText(
             text: Strings.home,
             color: Colors.white,
+            fontSize: 18,
           ),
           centerTitle: true,
         ),

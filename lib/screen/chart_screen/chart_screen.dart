@@ -28,7 +28,9 @@ class _ChartScreenState extends State<ChartScreen> {
             )
           ]),
           title: KText(
-            text: Strings.chart, color: Colors.white,
+            text: Strings.chart,
+            color: Colors.white,
+            fontSize: 18,
           ),
           centerTitle: true,
         ),
