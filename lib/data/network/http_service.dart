@@ -11,7 +11,7 @@ class HttpService {
     Response res = await get(Uri.parse(postUrl));
 
     if (res.statusCode == 200) {
-      Map<String, dynamic> map = jsonDecode(res.body);
+      final map = jsonDecode(res.body).cast<Map<String, dynamic>>();
       List<dynamic> itemHomes = map['itemhome'];
       return itemHomes;
     } else {

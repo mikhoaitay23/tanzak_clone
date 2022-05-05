@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tanzak_clone/screen/detail/detail_screen.dart';
-import 'package:tanzak_clone/screen/home_screen/home_screen.dart';
-import 'package:tanzak_clone/screen/search_screen/search_screen.dart';
-import 'package:tanzak_clone/screen/settings_screen/settings_screen.dart';
-import 'package:tanzak_clone/screen/chart_screen/chart_screen.dart';
+import 'package:tanzak_clone/screen/home/home_screen.dart';
+import 'package:tanzak_clone/screen/reading/reading_screen.dart';
+import 'package:tanzak_clone/screen/search/search_screen.dart';
+import 'package:tanzak_clone/screen/settings/settings_detail/settings_detail_screen.dart';
+import 'package:tanzak_clone/screen/settings/settings_screen.dart';
+import 'package:tanzak_clone/screen/chart/chart_screen.dart';
 import 'package:tanzak_clone/utils/strings.dart';
 
 void main() {
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/DetailScreen': (context) => const DetailScreen(),
+        '/SettingsDetailScreen': (context) => const SettingsDetailScreen(),
+        '/ReadingScreen': (context) => const ReadingScreen()
       },
       theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -30,7 +34,7 @@ class MyApp extends StatelessWidget {
             indicator: UnderlineTabIndicator(
                 borderSide: BorderSide(color: Colors.white)),
           )),
-      home: Scaffold(
+      home: const Scaffold(
         body: SafeArea(
           child: HomePage(),
         ),
@@ -40,6 +44,8 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }

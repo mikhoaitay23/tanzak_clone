@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:tanzak_clone/screen/reading/reading_screen.dart';
 import 'package:tanzak_clone/utils/strings.dart';
 import 'package:tanzak_clone/widget/section_episode.dart';
 import 'package:tanzak_clone/widget/section_manga.dart';
@@ -20,6 +21,7 @@ class DetailScreen extends StatelessWidget {
           title: KText(
             text: Strings.detail,
             color: Colors.white,
+            fontSize: 18,
           ),
           centerTitle: true,
           leading: IconButton(
@@ -137,7 +139,9 @@ class DetailScreen extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, ReadingScreen.routeName);
+                    },
                     child: SizedBox(
                         height: 50,
                         width: double.infinity,

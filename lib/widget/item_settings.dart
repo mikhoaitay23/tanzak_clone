@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:tanzak_clone/screen/settings/settings_detail/settings_detail_screen.dart';
 
 import 'ktext.dart';
 
@@ -29,10 +31,57 @@ class ItemSettings extends StatelessWidget {
               ],
             ),
           ),
-          onTap: () {},
+          onTap: () {
+            if (haveArrow) {
+              Navigator.pushNamed(context, SettingsDetailScreen.routeName);
+            } else {
+              sendMail();
+            }
+          },
         ),
         const Divider(),
       ],
     );
+  }
+
+  // Future<void> sendMail() async {
+  //   final Email email = Email(
+  //     body: 'Email body',
+  //     subject: 'Email subject',
+  //     recipients: ['example@example.com'],
+  //     isHTML: false,
+  //   );
+  //
+  //   String platformResponse;
+  //
+  //   try {
+  //     await FlutterEmailSender.send(email);
+  //     platformResponse = 'success';
+  //   } catch (error) {
+  //     print(error);
+  //     platformResponse = error.toString();
+  //   }
+  //
+  //   if (!mounted) return;
+  //
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(
+  //       content: Text(platformResponse),
+  //     ),
+  //   );
+  // }
+
+  Future<void> sendMail() async {
+    final Email email = Email(
+      body: 'Email body',
+      subject: 'Email subject',
+      recipients: ['example@example.com'],
+      cc: ['cc@example.com'],
+      bcc: ['bcc@example.com'],
+      attachmentPaths: ['/path/to/attachment.zip'],
+      isHTML: false,
+    );
+
+    await FlutterEmailSender.send(email);
   }
 }

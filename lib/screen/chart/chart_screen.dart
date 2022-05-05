@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tanzak_clone/utils/strings.dart';
 
 import '../../widget/ktext.dart';
-import '../chart_screen/first/chart_screen_first.dart';
-import '../chart_screen/second/chart_screen_second.dart';
+import '../chart/first/chart_screen_first.dart';
+import '../chart/second/chart_screen_second.dart';
 
 class ChartScreen extends StatefulWidget {
   @override

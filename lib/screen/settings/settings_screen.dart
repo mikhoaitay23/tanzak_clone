@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:tanzak_clone/widget/item_settings.dart';
 
 import '../../widget/ktext.dart';
@@ -114,4 +115,5 @@ class SettingsState extends State<SettingsScreen> {
           child: Text(title),
         ),
       );
+
 }
