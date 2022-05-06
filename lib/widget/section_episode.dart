@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tanzak_clone/widget/item_episode.dart';
 
@@ -6,6 +5,9 @@ import '../fake_data.dart';
 import 'ktext.dart';
 
 class SectionEpisode extends StatelessWidget {
+
+  const SectionEpisode({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(

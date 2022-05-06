@@ -8,7 +8,7 @@ class ItemSettings extends StatelessWidget {
   String title;
   bool haveArrow;
 
-  ItemSettings({this.title, this.haveArrow});
+  ItemSettings({Key key, this.title, this.haveArrow}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,33 +44,6 @@ class ItemSettings extends StatelessWidget {
     );
   }
 
-  // Future<void> sendMail() async {
-  //   final Email email = Email(
-  //     body: 'Email body',
-  //     subject: 'Email subject',
-  //     recipients: ['example@example.com'],
-  //     isHTML: false,
-  //   );
-  //
-  //   String platformResponse;
-  //
-  //   try {
-  //     await FlutterEmailSender.send(email);
-  //     platformResponse = 'success';
-  //   } catch (error) {
-  //     print(error);
-  //     platformResponse = error.toString();
-  //   }
-  //
-  //   if (!mounted) return;
-  //
-  //   ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(
-  //       content: Text(platformResponse),
-  //     ),
-  //   );
-  // }
-
   Future<void> sendMail() async {
     final Email email = Email(
       body: 'Email body',
@@ -78,7 +51,6 @@ class ItemSettings extends StatelessWidget {
       recipients: ['example@example.com'],
       cc: ['cc@example.com'],
       bcc: ['bcc@example.com'],
-      attachmentPaths: ['/path/to/attachment.zip'],
       isHTML: false,
     );
 

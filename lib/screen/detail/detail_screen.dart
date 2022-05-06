@@ -183,8 +183,8 @@ class DetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SectionEpisode(),
-                SectionManga()
+                const SectionEpisode(),
+                const SectionManga()
               ],
             ),
           ),

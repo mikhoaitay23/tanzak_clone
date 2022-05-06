@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../data/model/item_home.dart';
@@ -7,7 +6,7 @@ import 'ktext.dart';
 class ItemEpisode extends StatelessWidget {
   ItemHome itemHome;
 
-  ItemEpisode({this.itemHome});
+  ItemEpisode({Key key, this.itemHome}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

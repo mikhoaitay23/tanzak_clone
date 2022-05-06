@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../fake_data.dart';
@@ -6,6 +5,8 @@ import '../screen/detail/detail_screen.dart';
 import 'ktext.dart';
 
 class SectionManga extends StatelessWidget {
+  const SectionManga({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
