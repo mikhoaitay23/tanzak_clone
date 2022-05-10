@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:tanzak_clone/utils/images.dart';
 import 'package:tanzak_clone/widget/item_settings.dart';
 
 import '../../widget/ktext.dart';
 
 class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({Key key}) : super(key: key);
+
   @override
   SettingsState createState() => SettingsState();
 }
@@ -23,6 +25,12 @@ class SettingsState extends State<SettingsScreen> {
             fontSize: 18,
           ),
           centerTitle: true,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(Images.imgBackgroundHeader),
+                    fit: BoxFit.fill)),
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -62,7 +70,9 @@ class SettingsState extends State<SettingsScreen> {
                 height: 8,
               ),
               _title('Title 2'),
-              const SizedBox(height: 8,),
+              const SizedBox(
+                height: 8,
+              ),
               ItemSettings(title: 'Sub title 1', haveArrow: true),
               ItemSettings(title: 'Sub title 2', haveArrow: true),
               ItemSettings(title: 'Sub title 3', haveArrow: true),
@@ -115,5 +125,4 @@ class SettingsState extends State<SettingsScreen> {
           child: Text(title),
         ),
       );
-
 }

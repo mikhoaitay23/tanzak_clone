@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tanzak_clone/fake_data.dart';
+import 'package:tanzak_clone/utils/images.dart';
 import 'package:tanzak_clone/utils/strings.dart';
 
 import '../../widget/ktext.dart';
@@ -36,6 +38,12 @@ class _SearchScreenState extends State<SearchScreen> {
           fontSize: 18,
         ),
         centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(Images.imgBackgroundHeader),
+                  fit: BoxFit.fill)),
+        ),
         elevation: 0,
         bottom: PreferredSize(
           child: Container(

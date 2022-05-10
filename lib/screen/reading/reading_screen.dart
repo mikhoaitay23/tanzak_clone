@@ -4,6 +4,7 @@ import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_8.dart';
 
 import '../../data/model/message_model.dart';
+import '../../utils/images.dart';
 import '../../widget/ktext.dart';
 
 class ReadingScreen extends StatefulWidget {
@@ -31,16 +32,30 @@ class ReadingScreenState extends State<ReadingScreen> {
           ),
           centerTitle: true,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+            icon: const Image(
+              image: ExactAssetImage(Images.icBtnClose),
+              width: 24,
+              height: 24,
+            ),
             onPressed: () => Navigator.of(context).pop(),
           ),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.more_horiz),
+              icon: const Image(
+                image: ExactAssetImage(Images.icMenuOption),
+                width: 24,
+                height: 24,
+              ),
               tooltip: 'Option',
             )
           ],
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(Images.imgBackgroundHeader),
+                    fit: BoxFit.fill)),
+          ),
         ),
         body: Column(
           children: [

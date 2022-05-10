@@ -7,6 +7,7 @@ import 'package:tanzak_clone/widget/section_episode.dart';
 import 'package:tanzak_clone/widget/section_manga.dart';
 import 'package:expand_widget/expand_widget.dart';
 import 'package:share_plus/share_plus.dart';
+import '../../utils/images.dart';
 import '../../widget/ktext.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -24,8 +25,18 @@ class DetailScreen extends StatelessWidget {
             fontSize: 18,
           ),
           centerTitle: true,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(Images.imgBackgroundHeader),
+                    fit: BoxFit.fill)),
+          ),
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+            icon: const Image(
+              image: ExactAssetImage(Images.icBtnGoBack),
+              width: 24,
+              height: 24,
+            ),
             onPressed: () => Navigator.of(context).pop(),
           ),
           actions: [
@@ -33,7 +44,11 @@ class DetailScreen extends StatelessWidget {
               onPressed: () {
                 _onShare(context);
               },
-              icon: const Icon(Icons.share),
+              icon: const Image(
+                image: ExactAssetImage(Images.icShareIcon2),
+                width: 24,
+                height: 24,
+              ),
               tooltip: 'Share',
             )
           ],
@@ -88,11 +103,14 @@ class DetailScreen extends StatelessWidget {
                         fontSize: 18,
                       ),
                       IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.favorite_border,
-                            color: Colors.blue,
-                          ))
+                        icon: const Image(
+                          image: ExactAssetImage(
+                              Images.icFavoriteDeactive),
+                          width: 24,
+                          height: 24,
+                        ),
+                        onPressed: () {},
+                      )
                     ],
                   ),
                 ),

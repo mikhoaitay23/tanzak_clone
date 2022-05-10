@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tanzak_clone/utils/strings.dart';
@@ -6,6 +7,7 @@ import 'package:tanzak_clone/widget/ktext.dart';
 import 'package:tanzak_clone/widget/section_manga.dart';
 
 import '../../fake_data.dart';
+import '../../utils/images.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -16,15 +18,30 @@ class _HomeScreenState extends State<HomeScreen> {
   int activeIndex = 0;
 
   @override
+  void initState() {
+    super.initState();
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.blue,
+    ));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: KText(
-            text: Strings.home,
-            color: Colors.white,
-            fontSize: 18,
+          title: Padding(
+            padding: const EdgeInsets.all(88),
+            child: Image.asset(
+              Images.icLogoName,
+            ),
           ),
           centerTitle: true,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(Images.imgBackgroundHeader),
+                    fit: BoxFit.fill)),
+          ),
         ),
         body: SafeArea(
             child: SingleChildScrollView(
@@ -45,8 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             buildIndicator(),
-            SectionManga(),
-            SectionManga(),
+            const SectionManga(),
+            const SectionManga(),
           ]),
         )));
   }

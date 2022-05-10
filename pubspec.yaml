@@ -71,6 +71,15 @@ flutter:
   assets:
      - assets/images/dartlogo.png
      - assets/images/img_haha.jpg
+     - assets/images/img_background_header.png
+     - assets/images/img_app_splash.png
+     - assets/images/img_app_splash2.png
+     - assets/icons/ic_share_icon_2.png
+     - assets/icons/ic_favorite_deactive.png
+     - assets/icons/ic_btn_go_back.png
+     - assets/icons/ic_btn_close.png
+     - assets/icons/ic_menu_option.png
+     - assets/icons/ic_logo_name.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
