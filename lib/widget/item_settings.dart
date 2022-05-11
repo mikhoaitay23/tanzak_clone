@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:tanzak_clone/screen/settings/settings_detail/settings_detail_screen.dart';
+import 'package:tanzak_clone/utils/images.dart';
 
 import 'ktext.dart';
 
@@ -25,7 +26,7 @@ class ItemSettings extends StatelessWidget {
                   color: Colors.black,
                 ),
                 Visibility(
-                  child: const Icon(Icons.arrow_forward_ios),
+                  child: Image.asset(Images.icArrowRight, width: 16, height: 16,),
                   visible: haveArrow,
                 ),
               ],

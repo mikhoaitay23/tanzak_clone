@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tanzak_clone/fake_data.dart';
+import 'package:tanzak_clone/screen/search_result/search_result_screen.dart';
 import 'package:tanzak_clone/utils/images.dart';
 import 'package:tanzak_clone/utils/strings.dart';
 
@@ -88,7 +89,9 @@ class _SearchScreenState extends State<SearchScreen> {
           return Column(
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, SearchResultScreen.routeName);
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(8),
                   child: Row(

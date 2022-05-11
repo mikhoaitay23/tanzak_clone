@@ -80,6 +80,10 @@ flutter:
      - assets/icons/ic_btn_close.png
      - assets/icons/ic_menu_option.png
      - assets/icons/ic_logo_name.png
+     - assets/icons/ic_reading.png
+     - assets/icons/ic_dropdown.png
+     - assets/icons/ic_coin.png
+     - assets/icons/ic_arrow_right.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

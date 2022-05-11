@@ -5,6 +5,7 @@ import 'package:tanzak_clone/screen/detail/detail_screen.dart';
 import 'package:tanzak_clone/screen/home/home_screen.dart';
 import 'package:tanzak_clone/screen/reading/reading_screen.dart';
 import 'package:tanzak_clone/screen/search/search_screen.dart';
+import 'package:tanzak_clone/screen/search_result/search_result_screen.dart';
 import 'package:tanzak_clone/screen/settings/settings_detail/settings_detail_screen.dart';
 import 'package:tanzak_clone/screen/settings/settings_screen.dart';
 import 'package:tanzak_clone/screen/chart/chart_screen.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         '/DetailScreen': (context) => const DetailScreen(),
         '/SettingsDetailScreen': (context) => const SettingsDetailScreen(),
         '/ReadingScreen': (context) => const ReadingScreen(),
-        '/HomePage': (context) => const HomePage()
+        '/HomePage': (context) => const HomePage(),
+        '/SearchResultScreen': (context) => const SearchResultScreen()
       },
       theme: ThemeData(
           primarySwatch: Colors.blue,

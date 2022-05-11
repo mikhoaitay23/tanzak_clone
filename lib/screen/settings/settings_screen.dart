@@ -40,8 +40,11 @@ class SettingsState extends State<SettingsScreen> {
                 height: 8,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [Text('Sub title 1')],
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(Images.icCoin),
+                  const Text('Sub title 1')
+                ],
               ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 8),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanzak_clone/utils/images.dart';
 
 import '../data/model/item_home.dart';
 import 'ktext.dart';
@@ -17,7 +18,10 @@ class ItemChart extends StatelessWidget {
           child: Container(
             color: Colors.grey,
             height: 200,
-            child: Image.network(itemHome.urlImage, fit: BoxFit.cover,),
+            child: Image.network(
+              itemHome.urlImage,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         const SizedBox(
@@ -47,9 +51,13 @@ class ItemChart extends StatelessWidget {
             ),
             Row(
               children: [
-                const Icon(
-                  Icons.remove_red_eye_sharp,
-                  color: Colors.indigo,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4),
+                  child: Image(
+                    image: ExactAssetImage(Images.icReading),
+                    width: 20,
+                    height: 20,
+                  ),
                 ),
                 KText(
                   text: '6666V',
