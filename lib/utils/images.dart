@@ -12,4 +12,5 @@ class Images {
 
   static const String imgBackgroundHeader = 'assets/images/img_background_header.png';
   static const String imgAppSplash = 'assets/images/img_app_splash.png';
+  static const String imgGuidelineNew = 'assets/images/img_guideline_new.png';
 }

@@ -74,6 +74,7 @@ flutter:
      - assets/images/img_background_header.png
      - assets/images/img_app_splash.png
      - assets/images/img_app_splash2.png
+     - assets/images/img_guideline_new.png
      - assets/icons/ic_share_icon_2.png
      - assets/icons/ic_favorite_deactive.png
      - assets/icons/ic_btn_go_back.png

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
-import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_8.dart';
+import 'package:tanzak_clone/widget/bot_message.dart';
+import 'package:tanzak_clone/widget/bottom_reading_controller.dart';
+import 'package:tanzak_clone/widget/receive_message.dart';
+import 'package:tanzak_clone/widget/send_message.dart';
 
 import '../../data/model/message_model.dart';
 import '../../utils/images.dart';
@@ -57,7 +60,7 @@ class ReadingScreenState extends State<ReadingScreen> {
                     fit: BoxFit.fill)),
           ),
         ),
-        body: Column(
+        body: Stack(
           children: [
             Expanded(
                 child: ClipRRect(
@@ -68,45 +71,38 @@ class ReadingScreenState extends State<ReadingScreen> {
                 itemBuilder: (BuildContext context, int index) {
                   final Message message = messages[index];
                   final bool isMe = message.sender.id == currentUser.id;
-                  return _buildMessage(message, isMe);
+                  if (index == 0) {
+                    return SizedBox(
+                      height: MediaQuery.of(context).size.height / 4,
+                    );
+                  } else {
+                    return _buildMessage(message, isMe);
+                  }
                 },
               ),
-            ))
+            )),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: BottomReadingController(),
+            )
           ],
         ));
   }
 
   _buildMessage(Message message, bool isMe) {
-    if (isMe) {
-      return ChatBubble(
-        clipper: ChatBubbleClipper8(type: BubbleType.sendBubble),
-        alignment: Alignment.topRight,
-        margin: const EdgeInsets.only(top: 20),
-        backGroundColor: Colors.blue,
-        child: Container(
-          constraints: BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width * 0.7,
-          ),
-          child: Text(
-            message.text,
-            style: const TextStyle(color: Colors.white),
-          ),
-        ),
+    if (message.sender.id == 2) {
+      return BotMessage(
+        messageModel: message,
+      );
+    } else {
+      if (isMe) {
+        return SendMessage(
+          messageModel: message,
+        );
+      }
+      return ReceiveMessage(
+        messageModel: message,
       );
     }
-    return ChatBubble(
-      clipper: ChatBubbleClipper8(type: BubbleType.receiverBubble),
-      backGroundColor: const Color(0xffE7E7ED),
-      margin: const EdgeInsets.only(top: 20),
-      child: Container(
-        constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.7,
-        ),
-        child: Text(
-          message.text,
-          style: const TextStyle(color: Colors.black),
-        ),
-      ),
-    );
   }
 }
