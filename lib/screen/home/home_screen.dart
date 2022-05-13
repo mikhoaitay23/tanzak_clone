@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tanzak_clone/utils/strings.dart';
-import 'package:tanzak_clone/widget/ktext.dart';
 import 'package:tanzak_clone/widget/section_manga.dart';
 
 import '../../fake_data.dart';
 import '../../utils/images.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key key}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -62,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             buildIndicator(),
+            buildBanner(),
             const SectionManga(),
             const SectionManga(),
           ]),
@@ -84,7 +85,12 @@ class _HomeScreenState extends State<HomeScreen> {
         effect: const WormEffect(
             dotWidth: 10,
             dotHeight: 10,
-            activeDotColor: Colors.deepPurple,
+            activeDotColor: Colors.blue,
             dotColor: Colors.grey),
       );
+
+  Widget buildBanner() => Container(
+    margin: const EdgeInsets.only(top: 8.0),
+    child: Image.asset(Images.imgBackgroundHeader, fit: BoxFit.fill, height: 88.0,),
+  );
 }

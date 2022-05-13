@@ -85,6 +85,8 @@ flutter:
      - assets/icons/ic_dropdown.png
      - assets/icons/ic_coin.png
      - assets/icons/ic_arrow_right.png
+     - assets/icons/ic_pay_story.png
+     - assets/icons/ic_free_story.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

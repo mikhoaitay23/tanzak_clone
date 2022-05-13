@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_bubble/bubble_type.dart';
-import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_8.dart';
 import 'package:tanzak_clone/widget/bot_message.dart';
 import 'package:tanzak_clone/widget/bottom_reading_controller.dart';
 import 'package:tanzak_clone/widget/receive_message.dart';
@@ -67,23 +65,27 @@ class ReadingScreenState extends State<ReadingScreen> {
               child: ListView.builder(
                 reverse: true,
                 padding: const EdgeInsets.only(top: 15.0),
-                itemCount: messages.length,
+                itemCount: messages.length + 1,
                 itemBuilder: (BuildContext context, int index) {
-                  final Message message = messages[index];
-                  final bool isMe = message.sender.id == currentUser.id;
                   if (index == 0) {
                     return SizedBox(
                       height: MediaQuery.of(context).size.height / 4,
                     );
                   } else {
-                    return _buildMessage(message, isMe);
+                    return _buildMessage(messages[index - 1],
+                        messages[index - 1].sender.id == currentUser.id);
                   }
                 },
               ),
             )),
-            const Align(
-              alignment: Alignment.bottomCenter,
-              child: BottomReadingController(),
+            GestureDetector(
+              onTap: () {
+                _addMessage();
+              },
+              child: const Align(
+                alignment: Alignment.bottomCenter,
+                child: BottomReadingController(),
+              ),
             )
           ],
         ));
@@ -104,5 +106,18 @@ class ReadingScreenState extends State<ReadingScreen> {
         messageModel: message,
       );
     }
+  }
+
+  _addMessage() {
+    Message message = Message(
+      sender: greg,
+      time: '5:30 PM',
+      text: 'Hey, how\'s it going? What did you do today?',
+      isLiked: true,
+      unread: true,
+    );
+    setState(() {
+      messages.insert(1, message);
+    });
   }
 }

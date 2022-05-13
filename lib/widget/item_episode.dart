@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanzak_clone/utils/images.dart';
 
 import '../data/model/item_home.dart';
 import 'ktext.dart';
@@ -25,7 +26,10 @@ class ItemEpisode extends StatelessWidget {
                       color: Colors.grey,
                       width: 100,
                       height: 60,
-                      child: Image.network(itemHome.urlImage, fit: BoxFit.cover,),
+                      child: Image.network(
+                        itemHome.urlImage,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8),
@@ -37,9 +41,15 @@ class ItemEpisode extends StatelessWidget {
                     )
                   ],
                 ),
-                KText(
-                  text: itemHome.description,
-                  color: Colors.black,
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset(Images.icFreeStory, width: 48.0, height: 48.0,),
+                    KText(
+                      text: itemHome.description,
+                      color: Colors.black,
+                    ),
+                  ],
                 )
               ],
             ),

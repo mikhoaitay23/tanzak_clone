@@ -14,12 +14,14 @@ class ItemChart extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Container(
-          color: Colors.grey,
-          height: 200,
-          child: Image.network(
-            itemHome.urlImage,
-            fit: BoxFit.cover,
+        Expanded(
+          child: Container(
+            color: Colors.grey,
+            height: 200,
+            child: Image.network(
+              itemHome.urlImage,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         const SizedBox(
