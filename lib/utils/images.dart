@@ -11,6 +11,7 @@ class Images {
   static const String icArrowRight = 'assets/icons/ic_arrow_right.png';
   static const String icFreeStory = 'assets/icons/ic_free_story.png';
   static const String icPayStory = 'assets/icons/ic_pay_story.png';
+  static const String icHelp = 'assets/icons/ic_help.png';
 
   static const String imgBackgroundHeader = 'assets/images/img_background_header.png';
   static const String imgAppSplash = 'assets/images/img_app_splash.png';

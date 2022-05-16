@@ -104,8 +104,7 @@ class DetailScreen extends StatelessWidget {
                       ),
                       IconButton(
                         icon: const Image(
-                          image: ExactAssetImage(
-                              Images.icFavoriteDeactive),
+                          image: ExactAssetImage(Images.icFavoriteDeactive),
                           width: 24,
                           height: 24,
                         ),
@@ -198,6 +197,31 @@ class DetailScreen extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         maxLines: 3,
                       ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(color: Colors.blue),
+                        child: Row(
+                          children: [
+                            Image.asset(Images.icCoin),
+                            KText(
+                              text: '30',
+                            )
+                          ],
+                        ),
+                      ),
+                      Image.asset(
+                        Images.icHelp,
+                        width: 24,
+                        height: 24,
+                      )
                     ],
                   ),
                 ),
