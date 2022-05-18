@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tanzak_clone/screen/reading/reading_screen.dart';
 import 'package:tanzak_clone/utils/strings.dart';
 import 'package:tanzak_clone/widget/section_episode.dart';
+import 'package:tanzak_clone/widget/section_lock.dart';
 import 'package:tanzak_clone/widget/section_manga.dart';
 import 'package:expand_widget/expand_widget.dart';
 import 'package:share_plus/share_plus.dart';
@@ -200,22 +201,65 @@ class DetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SectionLock(),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        decoration: const BoxDecoration(color: Colors.blue),
-                        child: Row(
-                          children: [
-                            Image.asset(Images.icCoin),
-                            KText(
-                              text: '30',
-                            )
-                          ],
-                        ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            height: 40,
+                            child: Stack(
+                              children: [
+                                Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Container(
+                                      width: 90,
+                                      height: 30,
+                                      decoration: const BoxDecoration(
+                                          color: Colors.indigo,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(12))),
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4),
+                                          child: KText(
+                                            text: '30 ABC',
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    )),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Image.asset(Images.icCoin),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  Images.icClock,
+                                  width: 16,
+                                  height: 16,
+                                ),
+                                KText(
+                                  text: 'qwerty',
+                                  color: Colors.black,
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
                       Image.asset(
                         Images.icHelp,

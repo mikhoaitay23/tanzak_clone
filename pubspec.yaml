@@ -88,6 +88,7 @@ flutter:
      - assets/icons/ic_pay_story.png
      - assets/icons/ic_free_story.png
      - assets/icons/ic_help.png
+     - assets/icons/ic_clock.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

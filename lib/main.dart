@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tanzak_clone/screen/detail/detail_screen.dart';
 import 'package:tanzak_clone/screen/home/home_screen.dart';
+import 'package:tanzak_clone/screen/purchase/purchase_screen.dart';
 import 'package:tanzak_clone/screen/reading/reading_screen.dart';
 import 'package:tanzak_clone/screen/search/search_screen.dart';
 import 'package:tanzak_clone/screen/search_result/search_result_screen.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         '/SettingsDetailScreen': (context) => const SettingsDetailScreen(),
         '/ReadingScreen': (context) => const ReadingScreen(),
         '/HomePage': (context) => const HomePage(),
-        '/SearchResultScreen': (context) => const SearchResultScreen()
+        '/SearchResultScreen': (context) => const SearchResultScreen(),
+        '/PurchaseScreen': (context) => const PurchaseScreen(),
       },
       theme: ThemeData(
           primarySwatch: Colors.blue,

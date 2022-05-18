@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:tanzak_clone/fake_data.dart';
 import 'package:tanzak_clone/screen/search_result/search_result_screen.dart';
 import 'package:tanzak_clone/utils/images.dart';
@@ -8,6 +7,8 @@ import 'package:tanzak_clone/utils/strings.dart';
 import '../../widget/ktext.dart';
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({Key key}) : super(key: key);
+
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
@@ -53,8 +54,9 @@ class _SearchScreenState extends State<SearchScreen> {
               width: double.infinity,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 2),
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                 child: TextField(
+                  textAlignVertical: TextAlignVertical.bottom,
                   decoration: InputDecoration(
                       filled: true,
                       isDense: true,

@@ -89,8 +89,15 @@ class _HomeScreenState extends State<HomeScreen> {
             dotColor: Colors.grey),
       );
 
-  Widget buildBanner() => Container(
-    margin: const EdgeInsets.only(top: 8.0),
-    child: Image.asset(Images.imgBackgroundHeader, fit: BoxFit.fill, height: 88.0,),
-  );
+  Widget buildBanner() => GestureDetector(
+        onTap: () {},
+        child: Container(
+          margin: const EdgeInsets.only(top: 8.0),
+          child: Image.asset(
+            Images.imgBackgroundHeader,
+            fit: BoxFit.fill,
+            height: 88.0,
+          ),
+        ),
+      );
 }

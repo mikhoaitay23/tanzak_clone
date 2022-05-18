@@ -43,7 +43,7 @@ class ItemChart extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4),
                 color: Colors.indigo,
               ),
-              padding: const EdgeInsets.all(4),
+              padding: const EdgeInsets.all(2),
               child: KText(
                 text: '66P',
                 color: Colors.white,

@@ -4,7 +4,6 @@ import 'package:tanzak_clone/fake_data.dart';
 import 'package:tanzak_clone/widget/ktext.dart';
 
 import '../../utils/images.dart';
-import '../../utils/strings.dart';
 
 class SearchResultScreen extends StatelessWidget {
   static const String routeName = '/SearchResultScreen';
