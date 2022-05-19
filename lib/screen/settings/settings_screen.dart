@@ -53,21 +53,19 @@ class SettingsState extends State<SettingsScreen> {
                   children: const [Text('Sub title 2'), Text('Sub title 3')],
                 ),
               ),
-              Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: KText(
-                      text: 'Button',
-                      color: Colors.white,
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.indigo,
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.zero)),
-                        elevation: 0),
-                  ),
-                ],
+              ElevatedButton(
+                onPressed: () {},
+                child: KText(
+                  text: 'Button',
+                  color: Colors.white,
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.indigo,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.zero)),
+                  elevation: 0,
+                  padding: const EdgeInsets.all(4)
+                ),
               ),
               const SizedBox(
                 height: 8,
